@@ -4,6 +4,7 @@ const port = 3000;
 
 const systemuser = require("./api/SystemUserPost.js")
 const user = require("./api/User.js")
+const know = require("./api/KnowledgeMenu.js")
 const uuid = require("uuid");
 
 // 对post请求的表单数据进行接受处理
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("/system/user", systemuser)
 app.use("/user", user)
+app.use("/know", know)
 app.get("/aaa", (req, res) => {
     console.log(uuid.v4().replaceAll("-",""));
     console.log(uuid.v4().replaceAll("-",""));
